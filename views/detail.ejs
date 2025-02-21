@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Grade Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <form action="/add-grade" method="POST">
     <div class="container">
         <h1>Student Grade Form</h1>
-        <form action="/add-grade" method="POST">
             <div>
                 <label for="id">Student ID :</label>
                 <input type="number" id="id" name="id" required>
@@ -32,9 +33,9 @@
                 <input type="number" id="grade" name="grade" required>
             </div>
             <div>
-                <button type="submit">Add Detail</button>
+                <button type="submit" class="btn btn-custom w-100">Add Detail</button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </body>
 </html>
