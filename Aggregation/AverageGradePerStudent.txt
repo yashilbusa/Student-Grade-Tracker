@@ -23,6 +23,17 @@
 // Output : 
 
 {
+  "_id": 4,
+  "Subjects": [
+    "Maths",
+    "Science",
+    "English",
+    "Chemistry"
+  ],
+  "AverageGrade": 90
+}
+
+{
   "_id": 1,
   "Subjects": [
     "Maths",
