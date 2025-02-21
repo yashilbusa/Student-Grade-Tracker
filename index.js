@@ -1,5 +1,8 @@
 import express from 'express'
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config()
 
 const app = express()
 const port = 5005
@@ -16,12 +19,34 @@ try {
 }
 
 const StudentSchema = new mongoose.Schema({
+  id:Number,
   studentName:String,
   subject:String,
   grade:Number
 })
-const StudentGrade = mongoose.model('StudentGrade',StudentSchema)
+const Student = mongoose.model('Student',StudentSchema)
 
 app.use(express.json())
+app.use(express.urlencoded({ extended: true })); 
+app.set('view engine','ejs')
 
+app.get("/",(req,res)=>{
+    res.render("detail")
+})
 
+app.post("/add-grade",async(req,res)=>{
+    const data = {
+        id:req.body.id,
+        studentName:req.body.studentname,
+        subject:req.body.subject,
+        grade:req.body.grade
+    }
+
+    const studentGrade = new Student(data)
+    await studentGrade.save()
+    res.render("detail")
+})
+
+app.get("/student-summary",async(req,res)=>{
+
+})
