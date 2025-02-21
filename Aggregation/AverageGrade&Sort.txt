@@ -10,7 +10,7 @@
         $avg: "$grade",
       },
       studentName:{
-        $push: "$studentName"
+        $first: "$studentName"
       }
     }
   },
