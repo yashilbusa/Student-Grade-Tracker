@@ -21,7 +21,7 @@ try {
 const StudentSchema = new mongoose.Schema({
   id:Number,
   studentName:String,
-  subject:String,
+  subject:[{type:String}],
   grade:Number
 })
 const Student = mongoose.model('Student',StudentSchema)
@@ -35,13 +35,21 @@ app.get("/",(req,res)=>{
 })
 
 app.post("/add-grade",async(req,res)=>{
+
+    // Student.insertOne({
+    //     id:req.body.id,   
+    //     studentName:req.body.studentname,
+    //     grade:req.body.grade,
+    //     subject:Student.subject.push(req.body.subject)
+    // })
+
     const data = {
         id:req.body.id,
         studentName:req.body.studentname,
-        subject:req.body.subject,
-        grade:req.body.grade
+        grade:req.body.grade,
+        subject:req.body.subject
     }
-
+    
     const studentGrade = new Student(data)
     await studentGrade.save()
     res.render("detail")
