@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose';
 
 const app = express()
-const port = 4004
+const port = 5005
 
 try {
     await mongoose.connect(process.env.url);
@@ -23,3 +23,5 @@ const StudentSchema = new mongoose.Schema({
 const StudentGrade = mongoose.model('StudentGrade',StudentSchema)
 
 app.use(express.json())
+
+
