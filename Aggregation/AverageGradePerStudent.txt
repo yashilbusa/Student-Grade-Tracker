@@ -1,0 +1,17 @@
+// Find average grade per student 
+
+[
+  {
+    $group: {
+      _id: "$id",
+      AverageGrade:{
+        $avg: '$grade'
+      }
+    }
+  },
+  {
+    $project: {
+      studentName:1
+    }
+  }
+]
