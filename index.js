@@ -52,3 +52,5 @@ app.get("/student-summary",async(req,res)=>{
     const student = await Student.find();
     res.send(student)
 })
+
+app.use()
