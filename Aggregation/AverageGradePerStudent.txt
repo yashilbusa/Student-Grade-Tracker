@@ -35,6 +35,18 @@
 }
 
 {
+  "_id": 3,
+  "Subjects": [
+    "Maths",
+    "Science",
+    "English",
+    "Chemistry",
+    "Physics"
+  ],
+  "AverageGrade": 72.8
+}
+
+{
   "AverageGrade": 67.2,
   "_id": 2,
   "Subjects": [
