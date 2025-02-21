@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config()
 
 const app = express()
-const port = 5005
+const port = 5050
 
 try {
     await mongoose.connect(process.env.url);
@@ -36,22 +36,22 @@ app.get("/",(req,res)=>{
 
 app.post("/add-grade",async(req,res)=>{
 
-    // Student.insertOne({
-    //     id:req.body.id,   
+    // Student.insertOne(
+    //     {id:req.body.id,   
     //     studentName:req.body.studentname,
-    //     grade:req.body.grade,
-    //     subject:Student.subject.push(req.body.subject)
-    // })
+    //     grade:req.body.grade},
+    //     { $push: { subject: req.body.subject } } 
+    // )
 
     const data = {
-        id:req.body.id,
-        studentName:req.body.studentname,
-        grade:req.body.grade,
-        subject:req.body.subject
+        id: req.body.id,
+        studentName: req.body.studentname,
+        grade: req.body.grade,
+        subject: Array.isArray(req.body.subject) ? req.body.subject : [req.body.subject]
     }
-    
-    const studentGrade = new Student(data)
-    await studentGrade.save()
+
+    const studentGrade = new Student(data);
+    await studentGrade.save();
     res.render("detail")
 })
 
