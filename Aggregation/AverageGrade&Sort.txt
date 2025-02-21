@@ -13,11 +13,18 @@
     }
   },
   {
+    $project: {
+      studentName:1,
+      AverageGrade:1    
+    }
+  },
+  {
     $sort: {
       AverageGrade: -1
     }
-  }
+  },
 ]
+
 
 
 // Output : 
