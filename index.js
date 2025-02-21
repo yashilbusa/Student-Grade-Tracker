@@ -39,7 +39,7 @@ app.post("/add-grade",async(req,res)=>{
     const data = {
         id: req.body.id,
         studentName: req.body.studentname,
-        subject:req.body.subject,
+        subject: req.body.subject,
         grade: req.body.grade
     }
 
@@ -49,5 +49,6 @@ app.post("/add-grade",async(req,res)=>{
 })
 
 app.get("/student-summary",async(req,res)=>{
-
+    const student = await Student.find();
+    res.send(student)
 })
