@@ -22,7 +22,8 @@ const StudentSchema = new mongoose.Schema({
   id:Number,
   studentName:String,
   subject:String,
-  grade:Number
+  grade:Number,
+  entryTime:String
 })
 const Student = mongoose.model('Student',StudentSchema)
 
@@ -41,7 +42,8 @@ app.post("/add-grade",async(req,res)=>{
         id: req.body.id,
         studentName: req.body.studentname,
         subject: req.body.subject,
-        grade: req.body.grade
+        grade: req.body.grade,
+        entryTime: new Date()
     }
 
     const studentGrade = new Student(data);
