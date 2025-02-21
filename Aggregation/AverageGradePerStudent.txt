@@ -4,8 +4,11 @@
   {
     $group: {
       _id: "$id",
-      AverageGrade:{
-        $avg: '$grade'
+      Subjects: {
+        $push: "$subject"
+      },
+      AverageGrade :{
+        $avg: "$grade"
       }
     }
   },
@@ -17,15 +20,28 @@
 ]
 
 
-
 // Output : 
 
 {
-  "AverageGrade": 77.8,
-  "_id": 1
+  "_id": 1,
+  "Subjects": [
+    "Maths",
+    "Science",
+    "English",
+    "Chemistry",
+    "Physics"
+  ],
+  "AverageGrade": 77.8
 }
 
 {
+  "AverageGrade": 67.2,
   "_id": 2,
-  "AverageGrade": 67.2
+  "Subjects": [
+    "Maths",
+    "Science",
+    "English",
+    "Chemistry",
+    "Physics"
+  ]
 }
