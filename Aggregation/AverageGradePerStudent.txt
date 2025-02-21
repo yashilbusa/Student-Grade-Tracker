@@ -10,8 +10,22 @@
     }
   },
   {
-    $project: {
-      studentName:1
+    $sort: {
+      AverageGrade: -1
     }
   }
 ]
+
+
+
+// Output : 
+
+{
+  "AverageGrade": 77.8,
+  "_id": 1
+}
+
+{
+  "_id": 2,
+  "AverageGrade": 67.2
+}
