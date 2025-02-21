@@ -51,7 +51,13 @@ app.post("/add-grade",async(req,res)=>{
     res.render("detail")
 })
 
-app.get("/student-summary",async(req,res)=>{
+app.get("/getAll",async(req,res)=>{
     const student = await Student.find();
     res.send(student)
+})
+
+app.get("/getDetail/:id",async(req,res)=>{
+    const Did = req.params.id
+    const data = await Student.find({id: Did})
+    res.send(data)
 })
