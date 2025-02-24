@@ -61,4 +61,3 @@ app.get("/getDetail/:id",async(req,res)=>{
     const data = await Student.find({id: Did})
     res.send(data)
 })
-
