@@ -29,18 +29,6 @@
 ]
 
 // Output : 
-
-{
-  "_id": 4,
-  "Subjects": [
-    "Maths",
-    "Science",
-    "English",
-    "Chemistry"
-  ],
-  "AverageGrade": 90
-}
-
 {
   "_id": 1,
   "Subjects": [
@@ -50,7 +38,47 @@
     "Chemistry",
     "Physics"
   ],
-  "AverageGrade": 77.8
+  "AverageGrade": 86.4,
+  "studentName": "yashil"
+}
+
+{
+  "Subjects": [
+    "Maths",
+    "Science",
+    "English",
+    "Chemistry",
+    "Physics"
+  ],
+  "AverageGrade": 84,
+  "studentName": "dharmesh",
+  "_id": 5
+}
+
+{
+  "Subjects": [
+    "Maths",
+    "Science",
+    "English",
+    "Chemistry",
+    "Physics"
+  ],
+  "AverageGrade": 83,
+  "studentName": "raj",
+  "_id": 2
+}
+
+{
+  "_id": 4,
+  "Subjects": [
+    "Maths",
+    "Science",
+    "English",
+    "Chemistry",
+    "Physics"
+  ],
+  "AverageGrade": 82.6,
+  "studentName": "om"
 }
 
 {
@@ -62,17 +90,6 @@
     "Chemistry",
     "Physics"
   ],
-  "AverageGrade": 72.8
-}
-
-{
-  "AverageGrade": 67.2,
-  "_id": 2,
-  "Subjects": [
-    "Maths",
-    "Science",
-    "English",
-    "Chemistry",
-    "Physics"
-  ]
+  "AverageGrade": 79,
+  "studentName": "meet"
 }
